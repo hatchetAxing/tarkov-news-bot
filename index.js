@@ -2,6 +2,7 @@
 //Collection is used to store and efficiently retrieve commands for execution.
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
+const { exec } = require('child_process');
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
