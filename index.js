@@ -21,6 +21,14 @@ const fs = require('node:fs'); //fs is used to read the commands directory and i
 const path = require('node:path'); //path helps construct paths to access files and directories
 
 
+exec('node ./webhook.js', (error) => {
+    if (error) {
+        console.error(`exec error: ${error}`);
+        return;
+    }
+	console.log("executed webhook");
+});
+
 
 client.commands = new Collection();
 
