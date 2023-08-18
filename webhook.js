@@ -73,9 +73,9 @@ async function init(){
         while(!changed) {
             if(lastUpdate == JSON.stringify(getInfo[0].name).replaceAll("\"", "")){
                 console.log("waiting");
-                browser.close();
                 await page.waitForTimeout(43200000); //timeout for 12 hours
-                return run();
+                run();
+                browser.close();
             } else {
                 changed = true;
                 lastUpdate = JSON.stringify(getInfo[0].name).replaceAll("\"", "");
@@ -109,7 +109,7 @@ async function init(){
                 embeds: [embed],
             });
             console.log("embed sent");
-            return run();
+            run();
     
         }
     
